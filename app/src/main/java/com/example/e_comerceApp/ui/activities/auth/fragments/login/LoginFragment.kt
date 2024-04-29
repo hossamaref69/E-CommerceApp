@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.e_comerceApp.ui.HomeActivity
+import com.example.e_comerceApp.ui.activities.home.HomeActivity
 import com.example.e_comerceApp.R
 import com.example.e_comerceApp.databinding.FragmentLoginBinding
-import com.example.e_comerceApp.ui.activities.base.BaseFragment
+import com.example.e_comerceApp.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

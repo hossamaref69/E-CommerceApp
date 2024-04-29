@@ -1,4 +1,4 @@
-package com.example.e_comerceApp.ui.activities.base
+package com.example.e_comerceApp.ui.base
 
 import android.app.AlertDialog
 import android.os.Bundle
