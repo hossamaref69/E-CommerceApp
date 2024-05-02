@@ -63,5 +63,6 @@ class LoginViewModel @Inject constructor(private val loginUseCase: LoginUseCase)
 
     fun creatAcconut(){
         events.value = LoginEvents.NavigateToRegisterFragment
+        events.value = null
     }
 }

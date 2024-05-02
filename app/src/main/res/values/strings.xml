@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">E-CommerceApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome_back_to_route">Welcome Back To Route</string>
     <string name="please_sign_in_with_your_mail">Please sign in with your mail</string>
@@ -20,4 +19,12 @@
     <string name="password_title">Password</string>
     <string name="sign_up">Sign up</string>
     <string name="confirmation_password">confirmation password</string>
+    <string name="home_search_hint">What do you search for?</string>
+    <string name="favorites_nav_tab_title">Favorites</string>
+    <string name="home_nav_tab_title">Home</string>
+    <string name="categories_nav_tab_title">Categories</string>
+    <string name="account_nav_tab_title">Account</string>
+    <string name="view_all">view all</string>
+    <string name="categories">categories</string>
+    <string name="laptops_and_accessories"><![CDATA[Laptops & Accessories]]></string>
 </resources>

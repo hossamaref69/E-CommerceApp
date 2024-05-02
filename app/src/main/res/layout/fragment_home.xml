@@ -1,14 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activities.home.fragments.home.HomeFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:id="@+id/root_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        tools:context=".ui.activities.home.fragments.home.HomeFragment">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.activities.home.fragments.home.HomeFragment">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/offers_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                tools:background="@drawable/image_tools_offer_preview"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="@id/offers_view_pager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tabBackground="@drawable/selector_viewpager_dot"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp" />
+
+            <TextView
+                android:id="@+id/categories_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/categories"
+                android:textColor="@color/dark_blue"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/offers_view_pager"
+                app:layout_constraintTop_toBottomOf="@id/offers_view_pager" />
+
+            <TextView
+                android:id="@+id/view_all_categories_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/view_all"
+                android:textColor="@color/dark_blue"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/offers_view_pager" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categories_recycler_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintStart_toStartOf="@id/offers_view_pager"
+                app:layout_constraintTop_toBottomOf="@id/categories_textview"
+                app:spanCount="2"
+                tools:listitem="@layout/item_category" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/categories_recycler_view_shimmer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toStartOf="@id/offers_view_pager"
+                app:layout_constraintTop_toBottomOf="@id/categories_textview">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <include layout="@layout/item_category" />
+
+                        <include layout="@layout/item_category" />
+
+                        <include layout="@layout/item_category" />
+
+                        <include layout="@layout/item_category" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <include layout="@layout/item_category" />
+
+                        <include layout="@layout/item_category" />
+
+                        <include layout="@layout/item_category" />
+
+                        <include layout="@layout/item_category" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <TextView
+                android:id="@+id/laps_accessories_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/laptops_and_accessories"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_regular"
+                app:layout_constraintStart_toStartOf="@id/offers_view_pager"
+                app:layout_constraintTop_toBottomOf="@id/categories_recycler_view_shimmer" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/laps_accessories_recycler_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="@id/offers_view_pager"
+                app:layout_constraintTop_toBottomOf="@id/laps_accessories_textview"
+                tools:listitem="@layout/item_product" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/laps_accessories_recycler_view_shimmer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/offers_view_pager"
+                app:layout_constraintTop_toBottomOf="@id/laps_accessories_textview">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/item_product" />
+
+                    <include layout="@layout/item_product" />
+
+                    <include layout="@layout/item_product" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

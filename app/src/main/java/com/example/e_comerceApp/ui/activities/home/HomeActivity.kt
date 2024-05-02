@@ -23,7 +23,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun initNavigation(){
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.auth_nav_host_fragment) as NavHostFragment
+            supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
     }
 }
