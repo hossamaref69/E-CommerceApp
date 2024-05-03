@@ -26,8 +26,9 @@
                 android:layout_height="100dp"
                 android:background="@color/gray"
                 android:scaleType="centerCrop"
-                app:imageFromUrl="@{category.image}"
                 tools:src="@drawable/image_men_category" />
+
+            <!--app:imageFromUrl="@{category.image}"-->
 
         </androidx.cardview.widget.CardView>
 
@@ -39,10 +40,11 @@
             android:background="@color/gray"
             android:fontFamily="@font/poppins_regular"
             android:gravity="center"
-            android:text="@{category.name}"
             android:textColor="@color/dark_blue"
             android:textSize="16sp"
             tools:text="Men's Fashion" />
+
+       <!-- android:text="@{category.name}"-->
 
     </LinearLayout>
 </layout>

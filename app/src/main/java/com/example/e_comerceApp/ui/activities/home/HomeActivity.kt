@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.e_comerceApp.R
 import com.example.e_comerceApp.databinding.ActivityAuthBinding
 import com.example.e_comerceApp.databinding.ActivityHomeBinding
@@ -19,11 +20,17 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initNavigation()
+        initBottomNavView()
     }
 
     private fun initNavigation(){
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+    }
+
+    private fun initBottomNavView() {
+        binding.bottomNavigation.itemIconTintList = null
+        binding.bottomNavigation.setupWithNavController(navController)
     }
 }

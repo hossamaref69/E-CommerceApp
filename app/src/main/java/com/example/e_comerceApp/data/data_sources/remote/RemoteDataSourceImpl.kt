@@ -5,14 +5,21 @@ import com.example.e_comerceApp.data.api.WebServices
 import com.example.e_comerceApp.data.models.auth.AuthResponse
 import com.example.e_comerceApp.data.models.auth.LoginRequest
 import com.example.e_comerceApp.data.models.auth.RegisterRequest
+import com.example.e_comerceApp.data.utils.SharedPreferenceHelper
 import javax.inject.Inject
 
 class RemoteDataSourceImpl @Inject constructor(
-    private val webServices: WebServices
+    private val webServices: WebServices,
+    private val sharedPreferenceHelper: SharedPreferenceHelper
 ) : RemoteDataSource {
 
-    override suspend fun login(email: String, password: String): AuthResponse {
-        return webServices.login(LoginRequest(email, password))
+    override suspend fun login(email: String, password: String){
+        try {
+            val authResponse = webServices.login(LoginRequest(email, password))
+            sharedPreferenceHelper.saveToken(authResponse.token!!)
+        }catch (e: Exception){
+            throw e
+        }
     }
 
     override suspend fun register(
