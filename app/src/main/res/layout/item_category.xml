@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--    <data>
+        <data>
             <variable
                 name="category"
-                type="" />
-        </data>-->
+                type="com.example.e_comerceApp.data.models.categoty.Category" />
+        </data>
 
     <LinearLayout
-        android:layout_width="100dp"
+        android:layout_width="118dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:orientation="vertical">
@@ -26,25 +26,24 @@
                 android:layout_height="100dp"
                 android:background="@color/gray"
                 android:scaleType="centerCrop"
+                app:imageFromUrl="@{category.image}"
                 tools:src="@drawable/image_men_category" />
-
-            <!--app:imageFromUrl="@{category.image}"-->
 
         </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="8dp"
             android:background="@color/gray"
             android:fontFamily="@font/poppins_regular"
             android:gravity="center"
             android:textColor="@color/dark_blue"
             android:textSize="16sp"
+            android:text="@{category.name}"
             tools:text="Men's Fashion" />
 
-       <!-- android:text="@{category.name}"-->
 
     </LinearLayout>
 </layout>

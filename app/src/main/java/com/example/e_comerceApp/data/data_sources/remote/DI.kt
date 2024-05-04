@@ -11,6 +11,7 @@ import dagger.hilt.components.SingletonComponent
 abstract class DI {
 
     @Binds
-    abstract fun provideRemoteDataSource(remoteDataSourceImpl: RemoteDataSourceImpl)
-    : RemoteDataSource
+    abstract fun provideRemoteDataSource(
+        remoteDataSourceImpl: RemoteDataSourceImpl
+    ): RemoteDataSource
 }

@@ -5,6 +5,7 @@ import com.example.e_comerceApp.data.api.WebServices
 import com.example.e_comerceApp.data.models.auth.AuthResponse
 import com.example.e_comerceApp.data.models.auth.LoginRequest
 import com.example.e_comerceApp.data.models.auth.RegisterRequest
+import com.example.e_comerceApp.data.models.categoty.Category
 import com.example.e_comerceApp.data.utils.SharedPreferenceHelper
 import javax.inject.Inject
 
@@ -30,6 +31,16 @@ class RemoteDataSourceImpl @Inject constructor(
         rePassword: String
     ) {
         return webServices.register(RegisterRequest(name, mobileNumber, email, password, rePassword))
+    }
+
+    override suspend fun getAllCategories(): List<Category?> {
+        try {
+            val categoriesResponse = webServices.getAllCategories()
+            return categoriesResponse.data ?: emptyList()
+
+        }catch (e: Exception){
+            throw e
+        }
     }
 
 }

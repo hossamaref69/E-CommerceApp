@@ -1,7 +1,7 @@
 package com.example.e_comerceApp.data.repository.auth_repository
 
 import com.example.e_comerceApp.data.data_sources.remote.RemoteDataSource
-import com.example.e_comerceApp.domain.repository.auth_repo.AuthRepository
+import com.example.e_comerceApp.domain.repository.auth_repository.AuthRepository
 import javax.inject.Inject
 
 class AuthRepositoryImpl @Inject constructor(
@@ -17,14 +17,14 @@ class AuthRepositoryImpl @Inject constructor(
         mobileNumber: String,
         email: String,
         password: String,
-        repassword: String
+        rePassword: String
     ) {
         remoteDataSource.register(
             name = name,
             mobileNumber = mobileNumber,
             email = email,
             password = password,
-            rePassword = repassword
+            rePassword = rePassword
         )
     }
 

@@ -1,6 +1,6 @@
 package com.example.e_comerceApp.data.repository.auth_repository
 
-import com.example.e_comerceApp.domain.repository.auth_repo.AuthRepository
+import com.example.e_comerceApp.domain.repository.auth_repository.AuthRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

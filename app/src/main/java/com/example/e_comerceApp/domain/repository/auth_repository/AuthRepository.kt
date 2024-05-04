@@ -1,4 +1,4 @@
-package com.example.e_comerceApp.domain.repository.auth_repo
+package com.example.e_comerceApp.domain.repository.auth_repository
 
 interface AuthRepository {
 
