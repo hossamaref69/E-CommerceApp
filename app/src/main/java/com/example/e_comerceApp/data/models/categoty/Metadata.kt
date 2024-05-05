@@ -1,4 +1,4 @@
-package com.mis.route.domain.models.category
+package com.example.e_comerceApp.data.models.categoty
 
 data class Metadata(
     val currentPage: Int? = null,
