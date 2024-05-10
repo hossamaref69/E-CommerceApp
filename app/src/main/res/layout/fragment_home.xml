@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
-                tools:background="@drawable/image_tools_offer_preview"
+                android:background="@drawable/image_tools_offer_preview"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="@string/categories"
+                android:text="@string/electronics_offers"
                 android:textColor="@color/dark_blue"
                 android:textSize="18sp"
                 android:fontFamily="@font/poppins_regular"
@@ -72,19 +72,19 @@
                 android:id="@+id/categories_recycler_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintStart_toStartOf="@id/offers_view_pager"
                 app:layout_constraintTop_toBottomOf="@id/categories_textview"
                 app:spanCount="2"
-                tools:listitem="@layout/item_category" />
+                tools:listitem="@layout/item_electronics_offers" />
 
             <com.facebook.shimmer.ShimmerFrameLayout
                 android:id="@+id/categories_recycler_view_shimmer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@id/offers_view_pager"
                 app:layout_constraintTop_toBottomOf="@id/categories_textview">
 
@@ -97,13 +97,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <include layout="@layout/item_category" />
+                        <include layout="@layout/item_electronics_offers" />
 
-                        <include layout="@layout/item_category" />
+                        <include layout="@layout/item_electronics_offers" />
 
-                        <include layout="@layout/item_category" />
+                        <include layout="@layout/item_electronics_offers" />
 
-                        <include layout="@layout/item_category" />
+                        <include layout="@layout/item_electronics_offers" />
 
                     </LinearLayout>
 
@@ -111,13 +111,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <include layout="@layout/item_category" />
+                        <include layout="@layout/item_electronics_offers" />
 
-                        <include layout="@layout/item_category" />
+                        <include layout="@layout/item_electronics_offers" />
 
-                        <include layout="@layout/item_category" />
+                        <include layout="@layout/item_electronics_offers" />
 
-                        <include layout="@layout/item_category" />
+                        <include layout="@layout/item_electronics_offers" />
 
                     </LinearLayout>
 
@@ -129,9 +129,9 @@
                 android:id="@+id/laps_accessories_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="@string/laptops_and_accessories"
+                android:text="@string/home_appliance"
                 android:textColor="@color/dark_blue"
                 android:textSize="18sp"
                 android:textStyle="bold"
